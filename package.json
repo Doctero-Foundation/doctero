@@ -1,0 +1,18 @@
+{
+  "name": "doctero",
+  "author": {
+    "name": "Yam P. Martins",
+    "email": "ymprado2010@gmail.com",
+    "url": "https://github.com/yammartins"
+  },
+  "version": "1.0.0",
+  "private": true,
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
