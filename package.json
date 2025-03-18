@@ -1,34 +1,39 @@
 {
-  "name": "doctero",
-  "version": "1.0.0",
+  "name": "doctero-monorepo",
+  "version": "0.0.1",
+  "license": "MIT",
   "author": {
     "name": "Yam P. Martins",
     "email": "ymprado2010@gmail.com",
     "url": "https://github.com/yammartins"
   },
   "private": true,
-  "module": "index.ts",
-  "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "start": "turbo start",
+    "check": "turbo check",
+    "check:fix": "turbo check:fix",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@tanstack/router-devtools": "^1.106.0",
-    "@types/bun": "latest",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4"
+    "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "19.6.1",
+    "@commitlint/config-conventional": "19.6.0",
+    "@doctero/ts-config": "workspace:*",
+    "commitizen": "4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "knip": "^5.44.5",
+    "lefthook": "^1.11.0",
+    "typescript": "5.8.2",
+    "turbo": "2.4.4"
   },
-  "peerDependencies": {
-    "typescript": "^5.7.3"
+  "packageManager": "pnpm@10.6.3",
+  "pnpm": {
+    "ignoredBuiltDependencies": ["@biomejs/biome", "@parcel/watcher", "esbuild", "lefthook"],
+    "onlyBuiltDependencies": ["@biomejs/biome", "@parcel/watcher", "esbuild", "lefthook"]
   },
-  "dependencies": {
-    "@tanstack/react-router": "^1.106.0",
-    "@tanstack/start": "^1.107.0",
-    "@vitejs/plugin-react": "^4.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "vinxi": "^0.5.3"
+  "engines": {
+    "node": ">=20"
   }
 }

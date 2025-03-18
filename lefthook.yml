@@ -1,0 +1,38 @@
+pre-commit:
+  parallel: true
+  commands:
+    typecheck:
+      root: "apps/web,packages/ui"
+      run: pnpm run typecheck  
+    check:
+      root: "apps/web,packages/ui"
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      run: npx biome check --fix --unsafe {staged_files}
+      stage_fixed: true
+    # unused-code:
+    #   run: pnpm run check:unused
+
+commit-msg:
+  parallel: true
+  commands:
+    lint-commit-msg:
+      run: npx commitlint --edit
+  scripts:
+    "template_checker":
+      runner: bash
+
+post-merge:
+  parallel: true
+  files: "git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD"
+  only:
+    - ref: 'main'
+  skip:
+    - rebase
+  commands:
+    migrations:
+      run: lefthook run migrations
+      env:
+        LEFTHOOK_QUIET: execution_info,meta,skips,summary
+    client-dependencies:
+      glob: "{pnpm-lock.yaml,package.json}"
+      run: pnpm install      

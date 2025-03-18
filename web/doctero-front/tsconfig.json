@@ -1,0 +1,13 @@
+{
+  "extends": "@doctero/ts-config/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["app/*"],
+      "@doctero/ui/*": ["../../packages/ui/src/*"]
+    },
+    "types": ["vinxi/client"]
+  },
+  "include": ["app", "**/*.ts", "**/*.tsx"],
+  "exclude": ["dist", "build"]
+}

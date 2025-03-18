@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
+  "entry": [],
+  "lefthook": {
+    "config": ["lefthook.yml"]
+  },
+  "workspaces": {
+    "web/doctero-front": {
+      "entry": ["./src/router.tsx", "scripts/{build,create}.js"],
+      "ignore": ["./src/routeTree.gen.ts"],
+      "ignoreDependencies": ["tailwindcss", "@tailwindcss/vite"]
+    }
+  }
+}

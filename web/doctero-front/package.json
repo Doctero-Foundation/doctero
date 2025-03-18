@@ -1,0 +1,35 @@
+{
+  "name": "@doctero/front",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "check": "biome check .",
+    "check:fix": "biome check --fix --unsafe .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@doctero/ts-config": "workspace:*",
+    "@tanstack/router-devtools": "1.114.23",
+    "@types/node": "^20",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.8.2",
+    "vite-tsconfig-paths": "5.1.4",
+    "web-vitals": "4.2.4"
+  },
+  "dependencies": {
+    "@doctero/ui": "workspace:*",
+    "@tailwindcss/vite": "^4.0.14",
+    "@tanstack/react-router": "1.114.23",
+    "@tanstack/react-start": "1.114.23",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "vinxi": "0.5.3"
+  }
+}
