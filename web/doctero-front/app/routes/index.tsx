@@ -1,4 +1,5 @@
 import * as fs from "node:fs"
+import { Button } from "@doctero/ui/components/Button"
 import { createFileRoute, useRouter } from "@tanstack/react-router"
 import { createServerFn } from "@tanstack/react-start"
 
@@ -31,15 +32,17 @@ function Home() {
   const state = Route.useLoaderData()
 
   return (
-    <button
-      type="button"
-      onClick={() => {
-        updateCount({ data: 1 }).then(() => {
-          router.invalidate()
-        })
-      }}
-    >
-      Add 1 to {state}?
-    </button>
+    <div>
+      <Button
+        type="button"
+        onClick={() => {
+          updateCount({ data: 1 }).then(() => {
+            router.invalidate()
+          })
+        }}
+      >
+        Add 1 to {state}?
+      </Button>
+    </div>
   )
 }

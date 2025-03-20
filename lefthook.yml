@@ -2,10 +2,8 @@ pre-commit:
   parallel: true
   commands:
     typecheck:
-      root: "apps/web,packages/ui"
       run: pnpm run typecheck  
     check:
-      root: "apps/web,packages/ui"
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: npx biome check --fix --unsafe {staged_files}
       stage_fixed: true

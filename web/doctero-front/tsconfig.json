@@ -1,13 +1,16 @@
 {
   "extends": "@doctero/ts-config/react.json",
   "compilerOptions": {
+    "types": ["vite/client"],
+
     "baseUrl": ".",
     "paths": {
       "@/*": ["app/*"],
       "@doctero/ui/*": ["../../packages/ui/src/*"]
     },
-    "types": ["vinxi/client"]
+
+    "noUncheckedSideEffectImports": true
   },
   "include": ["app", "**/*.ts", "**/*.tsx"],
-  "exclude": ["dist", "build"]
+  "exclude": ["dist", "build", "node_modules"]
 }

@@ -14,22 +14,29 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@doctero/ts-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.0.14",
     "@tanstack/router-devtools": "1.114.23",
     "@types/node": "^20",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "@vitejs/plugin-react": "4.3.4",
+    "babel-plugin-react-compiler": "latest",
+    "tailwindcss": "^4.0.14",
     "typescript": "5.8.2",
     "vite-tsconfig-paths": "5.1.4",
+    "vite": "6.2.2",
     "web-vitals": "4.2.4"
   },
   "dependencies": {
     "@doctero/ui": "workspace:*",
     "@tailwindcss/vite": "^4.0.14",
-    "@tanstack/react-router": "1.114.23",
-    "@tanstack/react-start": "1.114.23",
+    "@tanstack/react-router": "1.114.25",
+    "@tanstack/react-start": "1.114.25",
+    "postcss": "^8.5.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7",
     "vinxi": "0.5.3"
   }
 }

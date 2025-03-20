@@ -1,0 +1,3 @@
+{
+  "extends": "@doctero/ts-config/base.json"
+}

@@ -1,6 +1,6 @@
+import appCss from "@doctero/ui/styles/globals.css?url"
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router"
 import React, { type ReactNode } from "react"
-import "@doctero/ui"
 import reportWebVitals from "../reportWebVitals"
 
 const TanStackRouterDevtools =
@@ -23,9 +23,10 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Start Starter",
+        title: "Doctero",
       },
     ],
+    links: [{ rel: "stylesheet", href: appCss }],
   }),
   component: RootComponent,
 })
@@ -41,11 +42,11 @@ function RootComponent() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning className="h-screen w-full bg-gray-800">
       <head>
         <HeadContent />
       </head>
-      <body className="bg-gray-800">
+      <body>
         {children}
         <Scripts />
       </body>

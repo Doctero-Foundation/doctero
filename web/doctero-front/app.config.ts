@@ -6,52 +6,26 @@ export default defineConfig({
   vite: {
     plugins: [
       tsConfigPaths({
-        projects: ["./tsconfig.json", "../../packages/ui/tsconfig.json"],
+        projects: ["./tsconfig.json"],
       }),
       tailwindcss(),
     ],
-    resolve: {
-      alias: [
-        {
-          find: "@",
-          replacement: "app",
-        },
-        {
-          find: "@doctero/ui",
-          replacement: "../../packages/ui/src",
-        },
-      ],
-      extensions: [".js", ".ts", ".jsx", ".tsx", ".json", ".css"],
-    },
-    ssr: {
-      noExternal: ["@doctero/ui"],
-      optimizeDeps: {
-        include: ["@doctero/ui"],
-      },
-      target: "node",
-    },
-    css: {
-      modules: {
-        localsConvention: "camelCase",
-      },
-    },
-    optimizeDeps: {
-      include: ["@doctero/ui"],
-      exclude: [],
-    },
-    build: {
-      commonjsOptions: {
-        include: [/node_modules/, /@doctero\/ui/],
-        sourceMap: true,
-      },
-      rollupOptions: {
-        external: ["vinxi"],
-        output: {
-          manualChunks: {
-            ui: ["@doctero/ui"],
+  },
+  tsr: {
+    // https://github.com/TanStack/router/discussions/2863#discussioncomment-12458714
+    appDirectory: "./app",
+  },
+  // https://react.dev/learn/react-compiler
+  react: {
+    babel: {
+      plugins: [
+        [
+          "babel-plugin-react-compiler",
+          {
+            target: "19",
           },
-        },
-      },
+        ],
+      ],
     },
   },
 })
