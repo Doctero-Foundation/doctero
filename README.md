@@ -8,15 +8,15 @@ pnpm install
 
 To run:
 
-* Go to web repo "./web/doctero-front" and run:
+* With pnpm only, from root dir:
 
 ```bash
-pnpm run dev
+pnpm run --filter ./web/doctero-front dev
 ```
 
 ###### OR
 
-* Run by root dir with turbo:
+* From root too, run with turbo:
 
 ```bash
 turbo dev

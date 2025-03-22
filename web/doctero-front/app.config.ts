@@ -10,6 +10,9 @@ export default defineConfig({
       }),
       tailwindcss(),
     ],
+    optimizeDeps: {
+      exclude: ["vinxi"],
+    },
   },
   tsr: {
     // https://github.com/TanStack/router/discussions/2863#discussioncomment-12458714

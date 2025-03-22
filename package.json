@@ -14,7 +14,7 @@
     "start": "turbo start",
     "check": "turbo check",
     "check:fix": "turbo check:fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

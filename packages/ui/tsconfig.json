@@ -5,7 +5,7 @@
     "paths": {
       "@doctero/ui/*": ["./src/*"]
     },
-    "types": ["node"]
+    "outDir": "dist"
   },
   "include": ["."],
   "exclude": ["node_modules", "dist"]
