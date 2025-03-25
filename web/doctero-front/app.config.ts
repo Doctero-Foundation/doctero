@@ -11,7 +11,7 @@ export default defineConfig({
       tailwindcss(),
     ],
     optimizeDeps: {
-      exclude: ["vinxi"],
+      exclude: ["@tanstack/react-router-devtools"],
     },
   },
   tsr: {
