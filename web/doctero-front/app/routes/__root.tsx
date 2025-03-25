@@ -2,17 +2,9 @@ import { seo } from "@/lib/seo"
 import appCss from "@doctero/ui/styles/globals.css?url"
 import type { QueryClient } from "@tanstack/react-query"
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from "@tanstack/react-router"
-import React, { type ReactNode } from "react"
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools"
+import type { ReactNode } from "react"
 import reportWebVitals from "../reportWebVitals"
-
-const TanStackRouterDevtools =
-  process.env.NODE_ENV === "production"
-    ? () => null
-    : React.lazy(() =>
-        import("@tanstack/router-devtools").then((res) => ({
-          default: res.TanStackRouterDevtools,
-        }))
-      )
 
 export const Route = createRootRouteWithContext<{
   token: string | null
@@ -52,8 +44,14 @@ export const Route = createRootRouteWithContext<{
         sizes: "16x16",
         href: "/favicon-16x16.png",
       },
-      { rel: "manifest", href: "/site.webmanifest", color: "#fffff" },
+      { rel: "manifest", href: "/site.webmanifest.json", color: "#fffff" },
       { rel: "icon", href: "/favicon.ico" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap",
+      },
     ],
   }),
   component: RootComponent,
@@ -74,7 +72,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <HeadContent />
       </head>
-      <body className="h-screen w-full scroll-smooth antialiased">
+      <body className="h-screen w-full scroll-smooth font-jakarta antialiased">
         {children}
         <Scripts />
       </body>

@@ -9,7 +9,12 @@
       "@doctero/ui/*": ["../../packages/ui/src/*"]
     },
 
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    // temporary solution to type error infer with tanstack start
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false
   },
   "include": ["app", "**/*.ts", "**/*.tsx"],
   "exclude": ["dist", "build", "node_modules"]
